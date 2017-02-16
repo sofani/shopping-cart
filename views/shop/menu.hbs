@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+     <!-- <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+     <link rel='stylesheet' href='/stylesheets/bootstrap.css'/> -->
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+       {{>header}}
+
+       {{>catagories-title}}
+
+       <div id="main-content"  class="container">
+          {{#each products}}
+			         
+			              <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> 
+                  
+					                <a href="/breakfastMenu"> 
+					                   <div class="category-tile">
+						                   <img src="{{this.0.imagePath}}" width="200" height="200"  alt="{this.title}}" >
+						                   <span>  {{this.0.title}}</span>
+					                    
+					                   </div>
+					                </a>
+                      </div>
+                       <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> 
+                           <a href="/lunchMenu"> 
+                            <div class="category-tile">
+                               <img src=" {{this.1.imagePath}}" width="200" height="200"  alt="{this.title}}" >
+                                 <span>{{this.1.title}}</span>
+                               </a>
+                             </div>
+                          </a>
+                        </div>
+                         <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> 
+                           <a href="/dinnerMenu"> 
+                            <div class="category-tile">
+                               <img src=" {{this.2.imagePath}}" width="200" height="200"  alt="{this.title}}" >
+                                 <span>{{this.2.title}}</span>
+                               </a>
+                             </div>
+                          </a>
+			               </div> 
+			             
+			         
+		
+
+        {{/each}}
+
+
+
+
+
+    
+       </div><!-- End of #home-tiles -->
+    
+
+        <!--  {{{body}}} -->
+
+        {{>footer}}
+  
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+      
+     </script>
+
+  <!--  <script src="javascripts/jquery-2.1.4.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script> -->
+  </body>
+</html>
+
+
+
+
+
+

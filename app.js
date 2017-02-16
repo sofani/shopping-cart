@@ -5,14 +5,24 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
+//var multer = require('multer');
 var mongoose = require('mongoose');
+mongoose.connect('localhost: 27017/shopping');
+
 var index = require('./routes/index');
+var menu = require('./routes/menu');
+var breakfast = require('./routes/breakfastMenu');
+var lunch = require('./routes/lunchMenu');
+var dinner = require('./routes/dinnerMenu');
+//var upload = require('./routes/upload');
 
 
 var app = express();
-mongoose.connect('localhost: 27017/shopping')
+
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', expressHbs({extname: '.hbs' , layoutsDir: __dirname + '/views/layouts/'}));
+
 app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
@@ -23,8 +33,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
 
+app.use('/', index);
+app.use('/menu', menu);
+app.use('/breakfastMenu', breakfast);
+app.use('/lunchMenu', lunch);
+app.use('/dinnerMenu', dinner);
+//app.use('/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

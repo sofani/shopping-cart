@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,16 +7,37 @@
 
      <!-- <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
      <link rel='stylesheet' href='/stylesheets/bootstrap.css'/> -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     
        {{>header}}
-       <div id="main-content"  class="container">
 
-            {{>middle}}
-    
+
+
+<div id="main-content"  class="container">
+          {{#each breakfasts}}
+			    
+			        {{#each this}}
+			              <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+					                <a href="#">
+					                  <div class="category-tile">
+						                    <img src="{{this.image}}" width="200" height="200"  alt="{this.title}}" >						                     
+						                     <span>{{this.description}}</span>
+						                     <span>{{this.price}}</span>
+					                      
+					                   </div>
+					                </a>
+			                </div>
+			               
+			        {{/each}}
+			      
+		
+
+        {{/each}}
+
+
        </div><!-- End of #home-tiles -->
     
 
@@ -38,10 +58,3 @@
   <script src="javascripts/bootstrap.min.js"></script> -->
   </body>
 </html>
-
-
-
-
-
-
-

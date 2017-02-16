@@ -3,55 +3,160 @@ var Product = require('../models/product');
 var mongoose = require('mongoose');
 mongoose.connect('localhost: 27017/shopping');
 
-var products = [ 
+var products = [
    
    new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-}),
+        imagePath: '../images/menu-tile.jpg',
+        title: 'Break Fast',
+        breakfast: [
+             {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1980,
+                description: "CA"
+            }
+        
+        ]
+       
+   }),
+   
+     new Product({
+        imagePath: '../images/menu-tile.jpg',
+        title: 'lunch',
+        breakfast: [
+             {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            }
+        
+        ]
+       
+   }),
 
-   new Product({
-    imagePath: '../images/menu-tile.jpg',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-}),
+    new Product({
+        imagePath: '../images/menu-tile.jpg',
+        title: 'dinner',
+        breakfast: [
+             {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1982,
+                description: "CA"
+            },
+            {
+                image: '../images/menu-tile.jpg',
+                price: 1981,
+                description: "CA"
+            }
+        
+        ]
+       
+   })
+
+];
 
 
 
-   new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-}),
 
-
-   new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-}),
-
-
-   new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-}),
-
-
-   new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
-})
-   ];
  var done = 0;
  for (var i = 0; i < products.length; i++) {
     products[i].save(function(err, result) {
@@ -62,6 +167,7 @@ var products = [
     });
 	
 }
+
 function exit() {
 	mongoose.disconnect();
 }
