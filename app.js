@@ -10,7 +10,7 @@ var config = require('./config');
 //var multer = require('multer');
 
 //mongoose.connect('localhost: 27017/shopping');
-vvar app = express();
+var app = express();
 mongoose.connect(config.database);
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
