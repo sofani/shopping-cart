@@ -1,30 +1,23 @@
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
+var config = require('./config');
 //var multer = require('multer');
-var mongoose = require('mongoose');
-mongoose.connect('localhost: 27017/shopping');
-var uristring = 
-  process.env.MONGODB_URI || 
-  'mongodb://localhost/shopping';
 
-// The http server will listen to an appropriate port, or default to
-// port 5000.
-var theport = process.env.PORT || 5000;
-
-// Makes connection asynchronously.  Mongoose will queue up database
-// operations and release them when the connection is complete.
-mongoose.connect(uristring, function (err, res) {
-  if (err) { 
-    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-    console.log ('Succeeded connected to: ' + uristring);
-  }
+//mongoose.connect('localhost: 27017/shopping');
+vvar app = express();
+mongoose.connect(config.database);
+mongoose.connection.on('error', function() {
+  console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
 });
+app.set('port', process.env.PORT || 3000);
+
+
 var index = require('./routes/index');
 var menu = require('./routes/menu');
 var breakfast = require('./routes/breakfastMenu');
