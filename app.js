@@ -8,7 +8,23 @@ var expressHbs = require('express-handlebars');
 //var multer = require('multer');
 var mongoose = require('mongoose');
 mongoose.connect('localhost: 27017/shopping');
+var uristring = 
+  process.env.MONGODB_URI || 
+  'mongodb://localhost/shopping';
 
+// The http server will listen to an appropriate port, or default to
+// port 5000.
+var theport = process.env.PORT || 5000;
+
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.connect(uristring, function (err, res) {
+  if (err) { 
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + uristring);
+  }
+});
 var index = require('./routes/index');
 var menu = require('./routes/menu');
 var breakfast = require('./routes/breakfastMenu');
