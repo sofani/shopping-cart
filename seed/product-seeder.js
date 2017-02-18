@@ -1,7 +1,7 @@
 var Product = require('../models/product');
 
 var mongoose = require('mongoose');
-mongoose.connect('localhost: 27017/shopping');
+mongoose.connect('mongodb://root:sofa@ds153659.mlab.com:53659/heroku_j8dpvmqm');
 
 var products = [
    
