@@ -20,7 +20,7 @@
           {{#each breakfasts}}
 			    
 			        {{#each this}}
-			              <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+			             <!--  <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
 					                <a href="#">
 					                  <div class="category-tile">
 						                    <img src="{{this.image}}" width="200" height="200"  alt="{this.title}}" >						                     
@@ -30,6 +30,24 @@
 					                   </div>
 					                </a>
 			                </div>
+ -->
+                      <div class="menu-item-tile col-md-6">
+  <div class="row">
+          <div class="col-sm-5">
+              <div class="menu-item-photo">
+                 <div>{{this.price}}</div>
+                <img class="img-responsive" width="250" height="150" src="{{this.image}}" alt="Item">
+              </div>
+              <div class="menu-item-price">{{this.price}}</div>
+          </div>
+          <div class="menu-item-description col-sm-7">
+              <h3 class="menu-item-title">{{this.title}}</h3>
+              <p class="menu-item-details">{{this.description}}</p>
+          </div>
+  </div>
+  <hr class="visible-xs">
+</div>
+
 			               
 			        {{/each}}
 			      
